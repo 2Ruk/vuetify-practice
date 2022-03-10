@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="text-center">
-      <v-btn>11</v-btn>
+      <v-btn color="primary">11</v-btn>
       <v-btn>11</v-btn>
       <v-btn>11</v-btn>
       <v-col cols="12">
