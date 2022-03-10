@@ -7,13 +7,22 @@
         color="grey lighten-3"
         mini-variant
     >
-      <v-avatar
-          v-for="n in 6"
-          :key="n"
-          :color="`grey ${n === 1 ? 'darken' : 'lighten'}-1`"
-          :size="n === 1 ? 36 : 20"
-          class="d-block text-center mx-auto mb-9"
-      ></v-avatar>
+        <v-badge
+            v-for="n in 6"
+            :key="n"
+            :size="46"
+            class="d-block text-center mx-auto mb-9"
+            bordered
+            bottom
+            color="deep-purple accent-4"
+            dot
+            offset-x="10"
+            offset-y="10"
+        >
+          <v-avatar size="40">
+            <v-img src="https://cdn.vuetifyjs.com/images/lists/2.jpg"></v-img>
+          </v-avatar>
+        </v-badge>
     </v-navigation-drawer>
 
     <v-main>
