@@ -1,3 +1,5 @@
 export interface IMenu {
-    dd:number;
+    text: string;
+    description: string;
+    tag: string[];
 }

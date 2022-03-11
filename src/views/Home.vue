@@ -5,7 +5,9 @@
   >
     <MainHeader/>
     <v-container>
-      <SelectMenu @select-menu="selectMenu"/>
+      <SelectMenu @selectMenu="selectMenu"/>
+      <br>
+      <v-parallax height="430" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-parallax>
     </v-container>
   </v-card>
 </template>
@@ -15,7 +17,6 @@ import {Component, Vue} from 'vue-property-decorator';
 import MainHeader from "@/components/main/main-header.vue";
 import SelectMenu from "@/components/main/content/select-menu.vue";
 import {SELECT} from "@/enum/common";
-import {createLogger} from "vuex";
 
 @Component({
   components: {
@@ -24,17 +25,21 @@ import {createLogger} from "vuex";
   },
 })
 export default class Home extends Vue {
-  items = [
-    {
-      color: '#952175',
-      src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
-      title: '수동',
-      artist: '수동으로 카테고리에서 선택합니다!',
-    },
-  ]
 
   selectMenu(select: SELECT): void {
-    console.log('------->',select)
+
+    switch (select) {
+      case SELECT.RANDOM: {
+        console.log('random 입니당')
+        break;
+      }
+      case SELECT.CATEGORY: {
+        console.log('카테고리 입니당')
+        break;
+      }
+      default:
+        console.log('a');
+    }
   }
 }
 </script>
