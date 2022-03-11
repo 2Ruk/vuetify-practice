@@ -5,7 +5,7 @@
   >
     <MainHeader/>
     <v-container>
-      <SelectMenu/>
+      <SelectMenu @select-menu="selectMenu"/>
     </v-container>
   </v-card>
 </template>
@@ -14,6 +14,8 @@
 import {Component, Vue} from 'vue-property-decorator';
 import MainHeader from "@/components/main/main-header.vue";
 import SelectMenu from "@/components/main/content/select-menu.vue";
+import {SELECT} from "@/enum/common";
+import {createLogger} from "vuex";
 
 @Component({
   components: {
@@ -31,6 +33,8 @@ export default class Home extends Vue {
     },
   ]
 
-
+  selectMenu(select: SELECT): void {
+    console.log('------->',select)
+  }
 }
 </script>

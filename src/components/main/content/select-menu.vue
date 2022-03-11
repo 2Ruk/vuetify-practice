@@ -2,7 +2,8 @@
   <v-row dense>
     <v-col cols="12">
       <v-card
-          color="#385F73"
+          @click="selectMenu(random)"
+          color="#4DB6AC"
           dark
       >
         <v-card-title class="text-h5">
@@ -23,7 +24,8 @@
 
     <v-col cols="12">
       <v-card
-          color="#952175"
+          @click="selectMenu(category)"
+          color="#81C784"
           dark
       >
         <v-card-title class="text-h5">
@@ -41,20 +43,22 @@
         </v-card-actions>
       </v-card>
     </v-col>
-
-
-
-
   </v-row>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import {SELECT} from "@/enum/common";
 
 @Component({})
 export default class SelectMenu extends Vue {
+  private random: SELECT = SELECT.RANDOM;
+  private category: SELECT = SELECT.CATEGORY;
 
+  selectMenu(selectValue: SELECT): void {
+    this.$emit('selectMenu',selectValue);
+  }
 }
 
 
