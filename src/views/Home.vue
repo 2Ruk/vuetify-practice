@@ -4,7 +4,6 @@
       class="mx-auto"
   >
     <MainHeader/>
-
     <v-container>
       <SelectMenu/>
     </v-container>
