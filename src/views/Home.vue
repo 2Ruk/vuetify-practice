@@ -1,17 +1,37 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <v-card
+      max-width="400"
+      class="mx-auto"
+  >
+    <MainHeader/>
+
+    <v-container>
+      <SelectMenu/>
+    </v-container>
+  </v-card>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import {Component, Vue} from 'vue-property-decorator';
+import MainHeader from "@/components/main/main-header.vue";
+import SelectMenu from "@/components/main/content/select-menu.vue";
 
 @Component({
   components: {
-    HelloWorld,
+    SelectMenu,
+    MainHeader
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  items = [
+    {
+      color: '#952175',
+      src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
+      title: '수동',
+      artist: '수동으로 카테고리에서 선택합니다!',
+    },
+  ]
+
+
+}
 </script>
