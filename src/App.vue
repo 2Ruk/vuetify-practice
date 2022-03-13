@@ -15,13 +15,6 @@ import Component from "vue-class-component";
 })
 export default class App extends Vue{
   drawer = false;
-}
 
-// export default Vue.extend({
-//   name: 'App',
-//
-//   data: () => ({
-//     drawer: true
-//   }),
-// });
+}
 </script>
