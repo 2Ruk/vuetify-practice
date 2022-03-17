@@ -1,16 +1,11 @@
 <template>
   <div>
-    <v-system-bar
-        color="#ECEFF1"
-        dark
-    >
+    <v-system-bar color="#ECEFF1" dark>
       <v-spacer></v-spacer>
       <v-icon color="#FF3D00">mdi-food-apple</v-icon>
     </v-system-bar>
 
-    <v-app-bar
-        dark
-        color="#E65100">
+    <v-app-bar color="#E65100" dark>
       <v-toolbar-title class="col-12 text-center">TODAY'S MENU</v-toolbar-title>
     </v-app-bar>
   </div>

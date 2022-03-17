@@ -1,9 +1,14 @@
 .DS_Store
 ../node_modules
-/node_modules
-/dist
+/back/dist
+/front/dist
 /back/node_modules
 /front/node_modules
+
+# compiled output
+/dist
+/node_modules
+
 
 # local env files
 .env.local

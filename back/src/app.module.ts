@@ -1,10 +1,29 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import {Module} from '@nestjs/common';
+import {AppController} from './app.controller';
+import {AppService} from './app.service';
+import {FoodModule} from './food/food.module';
+import {MongooseModule} from "@nestjs/mongoose";
+import {ConfigModule, ConfigService} from "@nestjs/config";
+require("dotenv").config();
+
+const uri  = process.env.uri;
 
 @Module({
-  imports: [],
+  imports: [
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      connectionName: 'Food',
+      useFactory: () => ({
+        uri: uri,
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      }),
+      inject: [ConfigService],
+    }),
+    FoodModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+}
