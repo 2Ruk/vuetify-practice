@@ -3,7 +3,7 @@
     <v-col cols="12">
       <v-card
           @click="selectMenu(random)"
-          color="#4DB6AC"
+          color="#F4511E"
           dark
       >
         <v-card-title class="text-h5">
@@ -25,9 +25,10 @@
     <v-col cols="12">
       <v-card
           @click="selectMenu(category)"
-          color="#81C784"
+          color="#FB8C00"
           dark
       >
+
         <v-card-title class="text-h5">
           SELECT
         </v-card-title>
