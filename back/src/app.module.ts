@@ -10,16 +10,16 @@ const uri  = process.env.uri;
 
 @Module({
   imports: [
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      connectionName: 'Food',
-      useFactory: () => ({
-        uri: uri,
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      }),
-      inject: [ConfigService],
-    }),
+    // MongooseModule.forRootAsync({
+    //   imports: [ConfigModule],
+    //   connectionName: 'Food',
+    //   useFactory: () => ({
+    //     uri: uri,
+    //     useNewUrlParser: true,
+    //     useUnifiedTopology: true
+    //   }),
+    //   inject: [ConfigService],
+    // }),
     FoodModule
   ],
   controllers: [AppController],

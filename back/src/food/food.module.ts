@@ -7,6 +7,6 @@ import {FoodFeature} from "../database/schema/food.schema";
 @Module({
   controllers: [FoodController],
   providers: [FoodService],
-  imports: [FoodFeature]
+  // imports: [FoodFeature]
 })
 export class FoodModule {}

@@ -4,11 +4,12 @@ import {UpdateFoodDto} from './dto/update-food.dto';
 import {InjectModel} from "@nestjs/mongoose";
 import {Food, FoodDocument} from "../database/schema/food.schema";
 import {Model} from "mongoose";
+import session, {Session} from "express-session";
 
 @Injectable()
 export class FoodService {
   constructor(
-      @InjectModel(Food.name) private foodModel: Model<FoodDocument>
+      // @InjectModel(Food.name) private foodModel: Model<FoodDocument>
   ) {
   }
 
@@ -16,29 +17,36 @@ export class FoodService {
     return 'This action adds a new food';
   }
 
-  findAll() {
+  findAll(session: Record<string, any>) {
+    console.clear();
+    console.log('------- session test ---------')
+    console.log(session)
+
+
+
+
     return `This action returns all food`;
   }
 
   async findOne(id: number) {
-    const $group = {
-      $group: {
-        _id: '$cateType',
-        category: {$last: "$cateType"}
-      },
-    };
-
-    const $project = {
-      $project: {
-        _id: 0,
-        category: 1
-      }
-    }
-    const foodsCate = await this.foodModel.aggregate([
-      $group,
-      $project
-    ]);
-    console.log(foodsCate)
+    // const $group = {
+    //   $group: {
+    //     _id: '$cateType',
+    //     category: {$last: "$cateType"}
+    //   },
+    // };
+    //
+    // const $project = {
+    //   $project: {
+    //     _id: 0,
+    //     category: 1
+    //   }
+    // }
+    // const foodsCate = await this.foodModel.aggregate([
+    //   $group,
+    //   $project
+    // ]);
+    // console.log(foodsCate)
 
     return `This action returns a #${id} food`;
   }
