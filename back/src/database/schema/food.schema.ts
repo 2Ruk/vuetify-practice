@@ -1,5 +1,11 @@
-import {AsyncModelFactory, MongooseModule, Prop, Schema, SchemaFactory,} from '@nestjs/mongoose';
-import {Document} from 'mongoose';
+import {
+  AsyncModelFactory,
+  MongooseModule,
+  Prop,
+  Schema,
+  SchemaFactory,
+} from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
 export type FoodDocument = Food & Document;
 
@@ -22,7 +28,6 @@ export class Food {
 
   @Prop()
   imgUrl: string;
-
 }
 
 export const FoodSchema = SchemaFactory.createForClass(Food);

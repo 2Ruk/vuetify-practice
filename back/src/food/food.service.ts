@@ -1,16 +1,13 @@
-import {Injectable} from '@nestjs/common';
-import {CreateFoodDto} from './dto/create-food.dto';
-import {UpdateFoodDto} from './dto/update-food.dto';
-import {InjectModel} from "@nestjs/mongoose";
-import {Food, FoodDocument} from "../database/schema/food.schema";
-import {Model} from "mongoose";
+import { Injectable } from '@nestjs/common';
+import { CreateFoodDto } from './dto/create-food.dto';
+import { UpdateFoodDto } from './dto/update-food.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Food, FoodDocument } from '../database/schema/food.schema';
+import { Model } from 'mongoose';
 
 @Injectable()
 export class FoodService {
-  constructor(
-      @InjectModel(Food.name) private foodModel: Model<FoodDocument>
-  ) {
-  }
+  constructor(@InjectModel(Food.name) private foodModel: Model<FoodDocument>) {}
 
   create(createFoodDto: CreateFoodDto) {
     return 'This action adds a new food';
@@ -24,21 +21,18 @@ export class FoodService {
     const $group = {
       $group: {
         _id: '$cateType',
-        category: {$last: "$cateType"}
+        category: { $last: '$cateType' },
       },
     };
 
     const $project = {
       $project: {
         _id: 0,
-        category: 1
-      }
-    }
-    const foodsCate = await this.foodModel.aggregate([
-      $group,
-      $project
-    ]);
-    console.log(foodsCate)
+        category: 1,
+      },
+    };
+    const foodsCate = await this.foodModel.aggregate([$group, $project]);
+    console.log(foodsCate);
 
     return `This action returns a #${id} food`;
   }
