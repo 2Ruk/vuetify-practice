@@ -30,7 +30,6 @@ import {SELECT} from "@/enum/common";
 export default class Home extends Vue {
   private url = 'https://cdn.vuetifyjs.com/images/parallax/material.jpg';
   selectMenu(select: SELECT): void {
-
     switch (select) {
       case SELECT.RANDOM: {
         this.url = 'https://cdn.vuetifyjs.com/images/parallax/material.jpg'

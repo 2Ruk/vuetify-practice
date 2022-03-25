@@ -5,7 +5,6 @@ import { FoodModule } from './food/food.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
 
 const uri = process.env.uri;
@@ -27,5 +26,4 @@ const uri = process.env.uri;
   controllers: [AppController],
   providers: [AppService],
 })
-
 export class AppModule {}
