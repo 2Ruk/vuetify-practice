@@ -1,12 +1,12 @@
-import {Module} from '@nestjs/common';
-import {AppController} from './app.controller';
-import {AppService} from './app.service';
-import {FoodModule} from './food/food.module';
-import {MongooseModule} from "@nestjs/mongoose";
-import {ConfigModule, ConfigService} from "@nestjs/config";
-require("dotenv").config();
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { FoodModule } from './food/food.module';
+import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+require('dotenv').config();
 
-const uri  = process.env.uri;
+const uri = process.env.uri;
 
 @Module({
   imports: [
@@ -16,14 +16,13 @@ const uri  = process.env.uri;
       useFactory: () => ({
         uri: uri,
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
       }),
       inject: [ConfigService],
     }),
-    FoodModule
+    FoodModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {
-}
+export class AppModule {}
