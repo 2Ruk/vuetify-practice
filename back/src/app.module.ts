@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { FoodModule } from './food/food.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+
 require('dotenv').config();
 
 const uri = process.env.uri;
