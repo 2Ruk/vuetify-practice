@@ -9,7 +9,6 @@
       <SelectMenu @selectMenu="selectMenu"/>
       <br>
 
-
       <v-img  height="400" :src="url"></v-img>
 <!--      <v-parallax  height="400" :src="url"></v-parallax>-->
       <br>
