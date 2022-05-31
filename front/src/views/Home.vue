@@ -9,6 +9,7 @@
       <SelectMenu @selectMenu="selectMenu"/>
       <br>
 
+
       <v-img  height="400" :src="url"></v-img>
 <!--      <v-parallax  height="400" :src="url"></v-parallax>-->
       <br>
@@ -21,7 +22,6 @@ import {Component, Vue} from 'vue-property-decorator';
 import MainHeader from "@/components/main/main-header.vue";
 import SelectMenu from "@/components/main/content/select-menu.vue";
 import {SELECT} from "@/enum/common";
-
 @Component({
   components: {
     SelectMenu,
