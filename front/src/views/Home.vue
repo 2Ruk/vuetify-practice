@@ -8,6 +8,7 @@
       <!-- #TODO : 컴포넌트화 예정 -->
       <SelectMenu @selectMenu="selectMenu"/>
       <br>
+
       <v-img  height="400" :src="url"></v-img>
 <!--      <v-parallax  height="400" :src="url"></v-parallax>-->
       <br>
